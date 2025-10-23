@@ -41,27 +41,3 @@ jobs:
     needs: [test]
     steps:
       - run: echo "🚀 Deploy listo!"
-
-  compilar:
-    name: 🔧 Compilar
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Compilando aplicación
-        run: echo "🔧 Compilando app..."
-
-  test:
-    name: 🧪 Test
-    runs-on: ubuntu-latest
-    needs: compilar
-    steps:
-      - name: Ejecutando pruebas
-        run: echo "🧪 Ejecutando pruebas..."
-
-  deploy:
-    name: 🚀 Deploy
-    runs-on: ubuntu-latest
-    needs: test
-    steps:
-      - name: Preparando despliegue
-        run: echo "🚀 Deploy listo!"
