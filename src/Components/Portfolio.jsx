@@ -19,7 +19,7 @@ import React from "react";
  * Need an image? Check out https://unsplash.com to download a photo you
  * freely use on your site.
  */
-import image from "../images/design-desk.jpeg";
+import image from "../images/poke.jpg";
 
 const imageAltText = "desktop with books and laptop";
 
@@ -31,15 +31,15 @@ const imageAltText = "desktop with books and laptop";
  */
 const projectList = [
   {
-    title: "10 Things To Know About Azure Static Web Apps 🎉",
+    title: "React of Pokemon Fan Club",
     description:
-      "Collaboration to create a beginner friendly article to help explain Azure Static Web Apps and tooling to get started.",
+      "Collaboration to create a Pokemon fan club.",
     url: "https://dev.to/azure/10-things-to-know-about-azure-static-web-apps-3n4i",
   },
   {
-    title: "Web Development for Beginners",
+    title: "JavaScript for Beginners",
     description:
-      "Contributed sketch note imagery to accompany each lesson. These help provide visual representation of what is being taught.",
+      "a free, 8-lesson tutorial series covering the basics of JavaScript programming.",
     url: "https://github.com/microsoft/web-dev-for-beginners",
   },
   {
