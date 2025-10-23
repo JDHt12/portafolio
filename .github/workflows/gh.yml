@@ -1,7 +1,7 @@
 name: Deploy a GitHub Pages
 
 on:
-  pull_request+:
+  push:
     branches: [main]
 
 permissions:
@@ -13,14 +13,25 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: 📥 Clonando repositorio
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: ⚙️ Configurando Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 18
-      - run: npm ci
-      - run: npm run build-gh
-      - name: Deploy
+
+      - name: 📦 Instalando dependencias
+        run: npm ci
+
+      - name: 🧱 Construyendo proyecto
+        run: npm run build-gh
+
+      - name: 🚀 Desplegando a GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+          publish_branch: gh-pages
